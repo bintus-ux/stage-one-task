@@ -8,40 +8,40 @@
 </head>
 <body>
     <div id="personal-details-container">
-    <div id="personal-details-wrapper">
-        <h1 id="slackUserName">
-          Bintus
-        </h1>
-        <hr />
-        <image id="slackDisplayImage" alt="Bintus" src="/stage-one-task/profile-picture-folder/avatar.jpg"/>
-    <div>
-        <p id="currentDayOfTheWeek"></p>,
-    <span id="currentUTCTime">
-    <p id="currentUTCHour"></p>:<p id="currentUTCMinute"></p> <p id="ap"></p>
-</span>
-<h2 id="myTrack">Frontend</h2>
-<a href="https://github.com/bintus-ux/stage-one-task" id="githubURL">Stage One Github Link</a>
-</div>
-    </div>
-</div>
+       <div id="personal-details-wrapper">
+          <h1 id="slackUserName">
+             Bintus
+          </h1>
+           <hr />
+          <image id="slackDisplayImage" alt="Bintus" src="/stage-one-task/profile-picture-folder/avatar.jpg"/>
+         <div>
+              <p id="currentDayOfTheWeek"></p>,
+            <span id="currentUTCTime">
+               <p id="currentUTCHour"></p>:<p id="currentUTCMinute"></p> <p id="ap"></p>
+            </span>
+                <h2 id="myTrack">Frontend</h2>
+                   <a href="https://github.com/bintus-ux/stage-one-task" id="githubURL">Stage One Github Link</a>
+         </div>
+       </div>
+   </div>
 
-<script>
-    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+   <script>
+       const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
 
-    let date = new Date();
+       let date = new Date();
 
-    let day = weekday[date.getDay()];
+       let day = weekday[date.getDay()];
 
-    let hour = date.getUTCHours();
+       let hour = date.getUTCHours();
 
-    let minute = date.getUTCMinutes();
+       let minute = date.getUTCMinutes();
 
-    let ante_post = hour >= 12 ? 'PM' : 'AM'
+       let ante_post = hour >= 12 ? 'PM' : 'AM'
 
-    document.getElementById("currentDayOfTheWeek").innerHTML = day;
-    document.getElementById("currentUTCHour").innerHTML = hour;
-    document.getElementById("currentUTCMinute").innerHTML = minute;
-    document.getElementById("ap").innerHTML = ante_post;
-</script>
+        document.getElementById("currentDayOfTheWeek").innerHTML = day;
+        document.getElementById("currentUTCHour").innerHTML = hour;
+        document.getElementById("currentUTCMinute").innerHTML = minute;
+        document.getElementById("ap").innerHTML = ante_post;
+   </script>
 </body>
 </html>
