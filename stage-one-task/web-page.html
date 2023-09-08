@@ -9,18 +9,16 @@
 <body>
     <div id="personal-details-container">
        <div id="personal-details-wrapper">
-          <h1 id="slackUserName">
+          <h1 data-testid="slackUserName">
              Bintus
           </h1>
            <hr />
-          <image id="slackDisplayImage" alt="Bintus" src="/stage-one-task/profile-picture-folder/avatar.jpg"/>
+          <image data-testid="slackDisplayImage" alt="Bintus" src="/profile-picture-folder/avatar.jpg"/>
          <div>
-              <p id="currentDayOfTheWeek"></p>,
-            <span id="currentUTCTime">
-               <p id="currentUTCHour"></p>:<p id="currentUTCMinute"></p> <p id="ap"></p>
-            </span>
-                <h2 id="myTrack">Frontend</h2>
-                   <a href="https://github.com/bintus-ux/stage-one-task" id="githubURL">Stage One Github Link</a>
+            <p data-testid="currentDayOfTheWeek" id="currentDayOfTheWeek"></p>,
+              <p data-testid="currentUTCTime" id="currentUTCTime"></p>
+                <h2 data-testid="myTrack">Frontend</h2>
+                <a href="https://github.com/bintus-ux/stage-one-task" data-testid="githubURL">Stage One Github Link</a>
          </div>
        </div>
    </div>
@@ -30,18 +28,13 @@
 
        let date = new Date();
 
-       let day = weekday[date.getDay()];
+       let currentDay = weekday[date.getDay()];
 
-       let hour = date.getUTCHours();
+       let time = date.getTime()
 
-       let minute = date.getUTCMinutes();
 
-       let ante_post = hour >= 12 ? 'PM' : 'AM'
-
-        document.getElementById("currentDayOfTheWeek").innerHTML = day;
-        document.getElementById("currentUTCHour").innerHTML = hour;
-        document.getElementById("currentUTCMinute").innerHTML = minute;
-        document.getElementById("ap").innerHTML = ante_post;
-   </script>
-</body>
+        document.getElementById("currentDayOfTheWeek").innerHTML = currentDay;
+        document.getElementById("currentUTCTime").innerHTML = time
+        </script>
+      </body>
 </html>
