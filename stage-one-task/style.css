@@ -1,42 +1,39 @@
-#personal-details-container {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  min-width: 100%;
-  overflow: hidden;
-  position: relative;
+* {
   margin: 0;
   padding: 0;
-  background-color: white;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
 }
-#personal-details-wrapper {
-  border: 1px black solid;
-  display: block;
-  text-align: center;
-  height: auto;
-  margin: 0 auto;
+body {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 2rem;
+  
 }
+
+#personal-details-container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: rgb(6, 81, 81);
+}
+
 h1, h2 {
   color: rgb(76, 161, 66);
 }
+.img-wrapper > img {
+  height: auto;
+  width: 400px;
+}
 #currentDayOfTheWeek {
-  display: inline-block;
+  color: white;
 }
 #currentUTCTime {
-  display: inline-block;
-}
-#currentUTCHour {
-  display: inline-block;
-}
-#currentUTCMinute {
-  display: inline-block;
-}
-#ap {
-  display: inline-block;
-}
-#myTrack {
-  margin-top: -10px;
-}
-#githubURL {
-  margin: 20px auto;
+  color: white;
 }

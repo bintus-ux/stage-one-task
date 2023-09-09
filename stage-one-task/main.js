@@ -1,20 +1,19 @@
-import './style.css'
+function updateCurrentDayOfWeek() {
+  const currentDate = new Date()
+  const options = { weekday: 'long' }
+  const currentDayOfWeek = currentDate.toLocaleString('en-US', options)
+  const currentDayElement = document.getElementById('currentDayOfTheWeek')
+  currentDayElement.textContent = currentDayOfWeek
+}
 
-const weekday = [
-  'Sunday',
-  'Monday',
-  'Tuesday',
-  'Wednesday',
-  'Thursday',
-  'Friday',
-  'Saturday',
-]
+function updateCurrentUTCTime() {
+  const currentDate = new Date()
+  const currentUTCTime = currentDate.getTime()
+  const currentUTCTimeElement = document.getElementById('currentUTCTime')
+  currentUTCTimeElement.textContent = currentUTCTime
+}
 
-let date = new Date()
+updateCurrentDayOfWeek()
+updateCurrentUTCTime()
 
-let currentDay = weekday[date.getDay()]
-
-let time = date.getTime()
-
-document.querySelector('#currentDayOfTheWeek').innerHTML = currentDay
-document.querySelector('#currentUTCTime').innerHTML = time
+setInterval(updateCurrentUTCTime, 1000)
