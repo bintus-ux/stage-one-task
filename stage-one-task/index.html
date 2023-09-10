@@ -9,12 +9,33 @@
   <body>
     <div id="personal-details-container">
          <h1 data-testid="slackUserName">Bintus</h1>
-        <div class="img-wrapper"><img src="./avatar.jpg"  data-testid="slackDisplayImage" alt="Bintus" /></div> 
-           <p data-testid="currentDayOfTheWeek" id="currentDayOfTheWeek"></p>
-             <p data-testid="currentUTCTime" id="currentUTCTime"></p>
-               <h2 data-testid="myTrack">Frontend</h2>
-               <a href="https://github.com/bintus-ux/stage-one-task" data-testid="githubURL">Stage One Github Link</a>
+         <div class="img-wrapper"><img src="./avatar.jpg"  data-testid="slackDisplayImage" alt="Bintus" ></div> 
+          <p data-testid="currentDayOfTheWeek" id="currentDayOfTheWeek"></p>
+          <p data-testid="currentUTCTime" id="currentUTCTime"></p>
+          <h2 data-testid="myTrack">Frontend</h2>
+          <a href="https://github.com/bintus-ux/stage-one-task" data-testid="githubURL">Stage One Github Link</a>
   </div>
-    <script type="module" src="/main.js"></script>
+    <script>
+function updateCurrentDayOfWeek() {
+  const currentDate = new Date()
+  const options = { weekday: 'long' }
+  const currentDayOfWeek = currentDate.toLocaleString('en-US', options)
+  const currentDayElement = document.getElementById('currentDayOfTheWeek')
+  currentDayElement.textContent = currentDayOfWeek
+}
+
+function updateCurrentUTCTime() {
+  const currentDate = new Date()
+  const currentUTCTime = currentDate.getTime()
+  const currentUTCTimeElement = document.getElementById('currentUTCTime')
+  currentUTCTimeElement.textContent = currentUTCTime
+}
+
+updateCurrentDayOfWeek()
+updateCurrentUTCTime()
+
+setInterval(updateCurrentUTCTime, 1000)
+
+    </script>
   </body>
 </html>
